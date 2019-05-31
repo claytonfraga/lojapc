@@ -9,7 +9,7 @@ import com.ufes.lojapc.presenter.stateassistente.AssistenteState;
 
 public final class SelecaoParteMonitorState extends AssistenteState {
 
-    public SelecaoParteMonitorState(AssistentePresenter presenter, Todo todo) throws IllegalArgumentException {
+    public SelecaoParteMonitorState(AssistentePresenter presenter, Todo todo) {
         super(presenter, todo);
         presenter.getView().getLblNomeComponente().setText("Monitor");
 

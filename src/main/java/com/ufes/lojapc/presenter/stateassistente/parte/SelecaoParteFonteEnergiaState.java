@@ -10,7 +10,7 @@ import com.ufes.lojapc.presenter.stateassistente.todo.SelecaoTodoGabineteState;
 
 public final class SelecaoParteFonteEnergiaState extends AssistenteState {
 
-    public SelecaoParteFonteEnergiaState(AssistentePresenter presenter, Todo todo) throws IllegalArgumentException {
+    public SelecaoParteFonteEnergiaState(AssistentePresenter presenter, Todo todo) {
         super(presenter, todo);
 
         presenter.getView().getLblNomeComponente().setText("Fonte de Energia");

@@ -2,7 +2,7 @@ package com.ufes.lojapc.model;
 
 public class Parte extends Componente {
 
-    private final static String FALHA = "Nao disponivel na parte";
+    private static final String FALHA = "Nao disponivel na parte";
 
     public Parte(double preco, String descricao) {
         super(preco, descricao);

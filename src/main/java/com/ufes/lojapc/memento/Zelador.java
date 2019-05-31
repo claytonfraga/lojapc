@@ -20,12 +20,12 @@ public class Zelador {
         return instancia;
     }
 
-    public void add(TodoMemento todo) throws IllegalArgumentException {
+    public void add(TodoMemento todo) {
         this.elementos.push(todo);
 
     }
 
-    public TodoMemento get() throws IllegalArgumentException {
+    public TodoMemento get() {
         if (!elementos.isEmpty()) {
             return elementos.pop();
         }

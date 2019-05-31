@@ -10,8 +10,6 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.List;
@@ -140,7 +138,7 @@ public class AssistentePresenter {
         view.repaint();
     }
 
-    public void setDAO(IComponenteDAO componenteDao) throws IOException {
+    public void setDAO(IComponenteDAO componenteDao) {
         this.daoComponentes = componenteDao;
         tm.setNumRows(0);
     }

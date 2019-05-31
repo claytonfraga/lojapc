@@ -9,7 +9,7 @@ import com.ufes.lojapc.presenter.stateassistente.AssistenteState;
 
 public final class SelecaoParteTecladoState extends AssistenteState {
 
-    public SelecaoParteTecladoState(AssistentePresenter presenter, Todo todo) throws IllegalArgumentException {
+    public SelecaoParteTecladoState(AssistentePresenter presenter, Todo todo) {
         super(presenter, todo);
         presenter.getView().getLblNomeComponente().setText("Teclado");
 

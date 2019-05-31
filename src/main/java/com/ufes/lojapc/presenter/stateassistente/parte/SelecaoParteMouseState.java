@@ -9,7 +9,7 @@ import com.ufes.lojapc.presenter.stateassistente.AssistenteState;
 
 public final class SelecaoParteMouseState extends AssistenteState {
 
-    public SelecaoParteMouseState(AssistentePresenter presenter, Todo todo) throws IllegalArgumentException {
+    public SelecaoParteMouseState(AssistentePresenter presenter, Todo todo) {
         super(presenter, todo);
         presenter.getView().getLblNomeComponente().setText("Mouse");
 
