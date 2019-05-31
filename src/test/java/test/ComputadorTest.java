@@ -285,6 +285,16 @@ public class ComputadorTest {
         processador.addComponente(null, new Parte(250, "Memoria"));
 
     }
+    @Test
+    public void addComponenteProcessadorConfiguracaoComputador2() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Adicione um Todo ou um Componente validos");
+
+        ProcessadorConfiguracaoComputador processador = new ProcessadorConfiguracaoComputador();
+        processador.addComponente(new Todo(250, "Memoria"), null);
+
+    }
 
     @Test
     public void zeladorVazio() {

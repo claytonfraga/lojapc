@@ -24,12 +24,13 @@ public final class ProcessadorConfiguracaoComputador {
 
         AdicionaTratador placaVideo = new AdicionaTratador("placa de video", "acelerador gráfico, acelerador, grafico");
         this.add(placaVideo);
+        
         AdicionaTratador gabinete = new AdicionaTratador("gabinete", "fonte, placa mae, placamae");
         this.add(gabinete);
 
     }
 
-    public boolean add(AdicionaTratador tratador) {
+    private boolean add(AdicionaTratador tratador) {
         return tratadores.add(tratador);
     }
 
