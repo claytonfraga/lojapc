@@ -1,11 +1,5 @@
 package test;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import com.ufes.lojapc.memento.Zelador;
 import com.ufes.lojapc.model.Parte;
 import com.ufes.lojapc.model.Todo;
@@ -15,10 +9,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author Clayton
- */
 public class ComputadorTest {
 
     public ComputadorTest() {
@@ -66,7 +56,7 @@ public class ComputadorTest {
         computador.add(monitor);
 
         // Zelador guarda a copia
-        //Zelador.getInstancia().add(computador.cria());
+        Zelador.getInstancia().add(computador.cria());
         System.out.println("Copia 1 " + computador.getPreco() + "\n");
 
         Todo placaMae = new Todo(430, "Placa mae");
@@ -75,13 +65,13 @@ public class ComputadorTest {
         computador.add(placaMae);
 
         // para falhar
-        //computador.add(hd);
+        computador.add(hd);
         computador.setPreco(160.0);
 
         System.out.println(computador);
 
         //Zelador guarda a copia
-       // Zelador.getInstancia().add(computador.cria());
+        Zelador.getInstancia().add(computador.cria());
         System.out.println("Copia 2 " + computador.getPreco() + "\n");
 
         Parte memoria = new Parte(100, "Memoria DDR4 16GB");
@@ -91,15 +81,13 @@ public class ComputadorTest {
         System.out.println(computador);
 
         //Restauracao
-       // computador.restaura(Zelador.getInstancia().get());
-
+        computador.restaura(Zelador.getInstancia().get());
         System.out.println("\nApos a restauracao 1:\n");
 
         System.out.println(computador);
 
         //Restauracao
-     //   computador.restaura(Zelador.getInstancia().get());
-
+        computador.restaura(Zelador.getInstancia().get());
         System.out.println("\nApos a restauracao 2:\n");
 
         System.out.println(computador);
