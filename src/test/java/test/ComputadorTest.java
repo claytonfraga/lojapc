@@ -1,5 +1,6 @@
 package test;
 
+import com.ufes.lojapc.chain.ProcessadorConfiguracaoComputador;
 import com.ufes.lojapc.memento.Zelador;
 import com.ufes.lojapc.model.Parte;
 import com.ufes.lojapc.model.Todo;
@@ -204,6 +205,28 @@ public class ComputadorTest {
 
         Parte parte = new Parte(12, "Memoria");
         parte.add("", new Parte(123, "Teclado"));
+
+    }
+
+    @Test
+    public void addTodo() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Informe uma descricao valida!");
+
+        Todo todo = new Todo(Double.NaN, null);
+        todo.add("", null);
+
+    }
+
+    @Test
+    public void addComponenteProcessadorConfiguracaoComputador() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Adicione um Todo ou um Componente validos");
+        
+        ProcessadorConfiguracaoComputador processador = new ProcessadorConfiguracaoComputador();
+        processador.addComponente(null, null);
 
     }
 

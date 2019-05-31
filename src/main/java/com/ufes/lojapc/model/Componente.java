@@ -8,6 +8,21 @@ public abstract class Componente implements Serializable {
     protected String descricao;
 
     public Componente(double preco, String descricao) {
+        if (preco <= 0) {
+            throw new IllegalArgumentException("Informe um preco valido!");
+        }
+
+        if (preco == Double.NaN) {
+            throw new IllegalArgumentException("Informe um preco valido!");
+        }
+
+        if (descricao == null) {
+            throw new IllegalArgumentException("Informe uma descricao valida!");
+        }
+        if (descricao.trim().isEmpty()) {
+            throw new IllegalArgumentException("Informe uma descricao valida!");
+        }
+
         this.preco = preco;
         this.descricao = descricao;
     }

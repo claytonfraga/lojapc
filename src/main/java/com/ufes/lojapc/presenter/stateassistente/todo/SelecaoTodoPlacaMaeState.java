@@ -53,8 +53,8 @@ public final class SelecaoTodoPlacaMaeState extends AssistenteState {
             if (todo != null) {
                 Todo novoTodo = new Todo(todo.getPreco(), todo.getDescricao());
                 novoTodo.add(new Parte(selecionado.getPreco(), selecionado.getDescricao()));
-                preencheDescricao();
             }
+            preencheDescricao();
         }
     }
 

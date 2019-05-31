@@ -34,6 +34,9 @@ public final class ProcessadorConfiguracaoComputador {
     }
 
     public boolean addComponente(Componente todo, Componente componente) {
+        if (todo == null || componente == null) {
+            throw new IllegalArgumentException("Adicione um Todo ou um Componente validos");
+        }
         for (AdicionaTratador tratador : tratadores) {
             if (tratador.aceita(todo.getDescricao(), componente.getDescricao())) {
                 return true;
