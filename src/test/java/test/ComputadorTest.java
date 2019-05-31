@@ -214,9 +214,54 @@ public class ComputadorTest {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Informe uma descricao valida!");
 
-        Todo todo = new Todo(Double.NaN, null);
+        Todo todo = new Todo(500, null);
         todo.add("", null);
 
+    }
+
+    @Test
+    public void addTodo1() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Informe um preco valido!");
+
+        Todo todo = new Todo(-0.01, null);
+    }
+
+    @Test
+    public void addTodo2() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Informe um preco valido!");
+
+        Todo todo = new Todo(Double.NaN, null);
+    }
+
+    @Test
+    public void addTodo3() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Informe uma descricao valida!");
+
+        Todo todo = new Todo(100, null);
+    }
+
+    @Test
+    public void addTodo4() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Informe uma descricao valida!");
+
+        Todo todo = new Todo(100, "");
+    }
+
+    @Test
+    public void addTodo5() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Informe uma descricao valida!");
+
+        Todo todo = new Todo(100, " ");
     }
 
     @Test
@@ -224,9 +269,20 @@ public class ComputadorTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Adicione um Todo ou um Componente validos");
-        
+
         ProcessadorConfiguracaoComputador processador = new ProcessadorConfiguracaoComputador();
         processador.addComponente(null, null);
+
+    }
+
+    @Test
+    public void addComponenteProcessadorConfiguracaoComputador1() {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Adicione um Todo ou um Componente validos");
+
+        ProcessadorConfiguracaoComputador processador = new ProcessadorConfiguracaoComputador();
+        processador.addComponente(null, new Parte(250, "Memoria"));
 
     }
 

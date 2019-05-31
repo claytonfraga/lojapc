@@ -21,7 +21,6 @@ public class Parte extends Componente {
 
     @Override
     public void restaura(TodoMemento memento) {
-        throw new UnsupportedOperationException(FALHA);
     }
 
     @Override

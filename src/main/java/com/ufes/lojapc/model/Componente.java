@@ -12,7 +12,7 @@ public abstract class Componente implements Serializable {
             throw new IllegalArgumentException("Informe um preco valido!");
         }
 
-        if (preco == Double.NaN) {
+        if (Double.isNaN(preco)) {
             throw new IllegalArgumentException("Informe um preco valido!");
         }
 
