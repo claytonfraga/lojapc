@@ -19,7 +19,6 @@ public final class SelecaoParteMonitorState extends AssistenteState {
 
         presenter.preencheDescricao(todo);
         presenter.getView().getBtnAnterior().setVisible(true);
-        presenter.getView().getBtnProximo().setVisible(true);
     }
 
     @Override
