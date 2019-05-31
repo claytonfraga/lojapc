@@ -115,6 +115,65 @@ public class ComputadorTest {
     }
 
     @Test
+    public void computadorComMemento2() throws Exception {
+
+        Todo computador = new Todo(100, "Computador gamer");
+        Parte monitor = new Parte(700, "monitor Samsung 23\"");
+        computador.add(monitor);
+
+        // Zelador guarda a copia
+        Zelador.getInstancia().add(computador.cria());
+        System.out.println("Copia 1 " + computador.getPreco() + "\n");
+
+        Todo placaMae = new Todo(430, "Placa mae");
+        Parte hd = new Parte(530, "SSD 240Gb");
+        placaMae.add(hd);
+        computador.add(placaMae);
+
+        System.out.println(computador);
+
+        //Zelador guarda a copia
+        Zelador.getInstancia().add(computador.cria());
+        System.out.println("Copia 2 " + computador.getPreco() + "\n");
+
+        Parte memoria = new Parte(100, "Memoria DDR4 16GB");
+        placaMae.add(memoria);
+
+        System.out.println("Memoria adicionada, sem copia!");
+        System.out.println(computador);
+
+        //Restauracao
+        computador.restaura(Zelador.getInstancia().get());
+        System.out.println("\nApos a restauracao 1:\n");
+
+        System.out.println(computador);
+
+        //Restauracao
+        computador.restaura(Zelador.getInstancia().get());
+        System.out.println("\nApos a restauracao 2:\n");
+
+        System.out.println(computador);
+
+        //Voltamos para adicionar uma nova configuraÃ§Ã£o
+        Todo placaMae1 = new Todo(930, "Placa mae XPTO TOP");
+        Parte hd1 = new Parte(530, "SSD 480Gb");
+        placaMae1.add(hd1);
+        computador.add(placaMae1);
+
+        System.out.println("\nApos retornar e fazer uma nova configuracao:\n");
+
+        String descricaoEsperada = "Computador gamer\n"
+                + "monitor Samsung 23\"\n"
+                + "Placa mae XPTO TOP\n"
+                + "SSD 480Gb";
+
+        double precoEsperado = 2260.0;
+
+        assertEquals(descricaoEsperada, computador.getDescricao());
+        assertEquals(precoEsperado, computador.getPreco(), 0.001);
+    }
+
+    @Test
     public void restauracaoParte() {
 
         thrown.expect(UnsupportedOperationException.class);
