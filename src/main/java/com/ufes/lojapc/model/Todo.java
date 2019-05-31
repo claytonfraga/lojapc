@@ -99,15 +99,11 @@ public class Todo extends Componente {
     }
 
     private ArrayList<Componente> clonaColecao(ArrayList<Componente> elementos) throws IOException, ClassNotFoundException {
-        try {
-            ByteArrayOutputStream saidaArray = new ByteArrayOutputStream();
-            ObjectOutputStream entradaObjeto = new ObjectOutputStream(saidaArray);
-            entradaObjeto.writeObject(elementos);
-            ObjectInputStream saidaObjeto = new ObjectInputStream(new ByteArrayInputStream(saidaArray.toByteArray()));
-            return (ArrayList<Componente>) saidaObjeto.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            throw e;
-        }
+        ByteArrayOutputStream saidaArray = new ByteArrayOutputStream();
+        ObjectOutputStream entradaObjeto = new ObjectOutputStream(saidaArray);
+        entradaObjeto.writeObject(elementos);
+        ObjectInputStream saidaObjeto = new ObjectInputStream(new ByteArrayInputStream(saidaArray.toByteArray()));
+        return (ArrayList<Componente>) saidaObjeto.readObject();
     }
 
     @Override

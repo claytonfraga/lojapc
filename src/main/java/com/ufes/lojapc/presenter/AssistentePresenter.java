@@ -32,36 +32,27 @@ public class AssistentePresenter {
         view = new AssistenteView();
         view.setVisible(false);
 
-        view.getBtnAnterior().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    anterior();
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(view, "Falha ao voltar para a tela anterior:\n " + ex.getMessage());
-                }
+        view.getBtnAnterior().addActionListener((ActionEvent e) -> {
+            try {
+                anterior();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(view, "Falha ao voltar para a tela anterior:\n " + ex.getMessage());
             }
         });
 
-        view.getBtnProximo().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    proximo();
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(view, "Falha ao ir para a próxima tela:\n" + ex.getMessage());
-                }
+        view.getBtnProximo().addActionListener((ActionEvent e) -> {
+            try {
+                proximo();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(view, "Falha ao ir para a próxima tela:\n" + ex.getMessage());
             }
         });
 
-        view.getBtnLimparSelecao().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    limparSelecao();
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(view, "Falha ao limpar seleção:\n" + ex.getMessage());
-                }
+        view.getBtnLimparSelecao().addActionListener((ActionEvent e) -> {
+            try {
+                limparSelecao();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(view, "Falha ao limpar seleção:\n" + ex.getMessage());
             }
         });
 
