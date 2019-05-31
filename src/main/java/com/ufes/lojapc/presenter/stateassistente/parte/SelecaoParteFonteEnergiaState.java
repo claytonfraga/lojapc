@@ -10,7 +10,7 @@ import com.ufes.lojapc.presenter.stateassistente.todo.SelecaoTodoGabineteState;
 
 public final class SelecaoParteFonteEnergiaState extends AssistenteState {
 
-    public SelecaoParteFonteEnergiaState(AssistentePresenter presenter, Todo todo) throws Exception {
+    public SelecaoParteFonteEnergiaState(AssistentePresenter presenter, Todo todo) throws IllegalArgumentException {
         super(presenter, todo);
 
         presenter.getView().getLblNomeComponente().setText("Fonte de Energia");
@@ -21,6 +21,7 @@ public final class SelecaoParteFonteEnergiaState extends AssistenteState {
 
         presenter.preencheDescricao(this.todo);
         presenter.getView().getBtnAnterior().setVisible(true);
+        presenter.getView().getBtnProximo().setVisible(true);
     }
 
     @Override

@@ -21,6 +21,7 @@ public final class SelecaoParteProcessadorState extends AssistenteState {
 
         presenter.preencheDescricao(todo);
         presenter.getView().getBtnAnterior().setVisible(true);
+        presenter.getView().getBtnProximo().setVisible(true);
     }
 
     @Override

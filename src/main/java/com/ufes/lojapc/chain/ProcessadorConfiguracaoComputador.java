@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public final class ProcessadorConfiguracaoComputador {
 
-    private ArrayList<AdicionaTratador> tratadores = new ArrayList<>();
+    private final ArrayList<AdicionaTratador> tratadores = new ArrayList<>();
 
     public ProcessadorConfiguracaoComputador() {
 

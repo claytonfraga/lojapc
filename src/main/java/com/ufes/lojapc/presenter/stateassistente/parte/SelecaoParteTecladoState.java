@@ -9,7 +9,7 @@ import com.ufes.lojapc.presenter.stateassistente.AssistenteState;
 
 public final class SelecaoParteTecladoState extends AssistenteState {
 
-    public SelecaoParteTecladoState(AssistentePresenter presenter, Todo todo) throws Exception {
+    public SelecaoParteTecladoState(AssistentePresenter presenter, Todo todo) throws IllegalArgumentException {
         super(presenter, todo);
         presenter.getView().getLblNomeComponente().setText("Teclado");
 
@@ -19,7 +19,8 @@ public final class SelecaoParteTecladoState extends AssistenteState {
 
         presenter.preencheDescricao(todo);
         presenter.getView().getBtnAnterior().setVisible(true);
-        presenter.getView().getBtnAnterior().setVisible(true);
+        presenter.getView().getBtnProximo().setVisible(false);
+        presenter.getView().getLblNomePreco().setText("Preço final: ");
     }
 
     @Override
@@ -28,17 +29,6 @@ public final class SelecaoParteTecladoState extends AssistenteState {
         presenter.setEstado(new SelecaoParteMouseState(presenter, todo));
     }
 
-    /*
-    @Override
-    public void proximo() throws Exception {
-        if (selecionado != null) {
-            Parte parte = new Parte(selecionado.getPreco(), selecionado.getDescricao());
-            todo.add(parte);
-            Zelador.getInstancia().add(todo.cria());
-            presenter.setEstado(new SelecaoParteFonteEnergiaState(presenter, todo));
-        }
-    }
-     */
     @Override
     protected void adicionaSelecionado(Componente selecionado) throws Exception {
         if (selecionado != null) {

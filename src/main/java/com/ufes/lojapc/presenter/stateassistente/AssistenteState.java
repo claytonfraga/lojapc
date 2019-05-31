@@ -5,7 +5,7 @@ import com.ufes.lojapc.model.Parte;
 import com.ufes.lojapc.model.Todo;
 import com.ufes.lojapc.presenter.AssistentePresenter;
 import com.ufes.lojapc.presenter.LinhaTabelaComponente;
-import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultListSelectionModel;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
@@ -14,7 +14,7 @@ import javax.swing.event.ListSelectionListener;
 public abstract class AssistenteState {
 
     protected AssistentePresenter presenter;
-    protected ArrayList<LinhaTabelaComponente> linhas;
+    protected List<LinhaTabelaComponente> linhas;
     protected Parte selecionado;
     protected Todo todo;
     protected Todo todoTemp;

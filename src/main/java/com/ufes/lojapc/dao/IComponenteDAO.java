@@ -1,10 +1,10 @@
 package com.ufes.lojapc.dao;
 
 import com.ufes.lojapc.presenter.LinhaTabelaComponente;
-import java.util.ArrayList;
+import java.util.List;
 
 public interface IComponenteDAO {
 
-    ArrayList<LinhaTabelaComponente> getTodosPorTipo(String tipo);
+    List<LinhaTabelaComponente> getTodosPorTipo(String tipo);
 
 }

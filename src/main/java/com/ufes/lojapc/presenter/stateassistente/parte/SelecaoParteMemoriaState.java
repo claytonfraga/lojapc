@@ -9,7 +9,7 @@ import com.ufes.lojapc.presenter.stateassistente.AssistenteState;
 
 public final class SelecaoParteMemoriaState extends AssistenteState {
 
-    public SelecaoParteMemoriaState(AssistentePresenter presenter, Todo todo) throws Exception {
+    public SelecaoParteMemoriaState(AssistentePresenter presenter, Todo todo) throws IllegalArgumentException {
         super(presenter, todo);
         presenter.getView().getLblNomeComponente().setText("Memória");
 
@@ -19,6 +19,7 @@ public final class SelecaoParteMemoriaState extends AssistenteState {
 
         presenter.preencheDescricao(todo);
         presenter.getView().getBtnAnterior().setVisible(true);
+        presenter.getView().getBtnProximo().setVisible(true);
     }
 
     @Override

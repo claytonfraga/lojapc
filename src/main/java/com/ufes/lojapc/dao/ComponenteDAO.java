@@ -1,14 +1,14 @@
 package com.ufes.lojapc.dao;
 
 import com.ufes.lojapc.presenter.LinhaTabelaComponente;
-import java.util.ArrayList;
+import java.util.List;
 
 public class ComponenteDAO implements IComponenteDAO {
 
     @Override
-    public ArrayList<LinhaTabelaComponente> getTodosPorTipo(String tipo) {
+    public List<LinhaTabelaComponente> getTodosPorTipo(String tipo) {
 
-        ArrayList<LinhaTabelaComponente> componentesRecuperados = FonteDadosStub.getInstance().getTodosPorTipo(tipo);
+        List<LinhaTabelaComponente> componentesRecuperados = FonteDadosStub.getInstance().getTodosPorTipo(tipo);
 
         if (componentesRecuperados != null) {
             return componentesRecuperados;

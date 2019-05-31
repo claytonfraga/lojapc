@@ -19,6 +19,7 @@ public final class SelecaoPartePlacaVideoState extends AssistenteState {
 
         presenter.preencheDescricao(todo);
         presenter.getView().getBtnAnterior().setVisible(true);
+        presenter.getView().getBtnProximo().setVisible(true);
     }
 
     @Override

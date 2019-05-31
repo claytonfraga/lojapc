@@ -15,26 +15,12 @@ public class AdicionaTratador implements ITratador {
 
     @Override
     public boolean aceita(String todo, String componente) {
-        String[] descricaoTodo = todo.split(",");
         String[] componentes = componente.split(" ");
 
         for (String strParte : componentes) {
-            for (String strTodo : descricaoTodo) {
-                String[] strNomeTodo = strTodo.split(" ");
-                for (String str : strNomeTodo) {
-                    String parte = tabelaPadrao.getValue();
-                    if (parte != null) {
-                        return parte.toLowerCase().contains(Util.removeAcentos(strParte.toLowerCase()));
-                    }
-                }
-                String chave = tabelaPadrao.getKey();
-                if (Util.removeAcentos(todo.toLowerCase()).contains(Util.removeAcentos(chave.toLowerCase()))) {
-                    strTodo = chave;
-                }
-                String parte = tabelaPadrao.getValue();
-                if (parte != null) {
-                    return parte.toLowerCase().contains(Util.removeAcentos(strParte.toLowerCase()));
-                }
+            String parte = tabelaPadrao.getValue();
+            if (parte != null) {
+                return parte.toLowerCase().contains(Util.removeAcentos(strParte.toLowerCase()));
             }
         }
         return false;

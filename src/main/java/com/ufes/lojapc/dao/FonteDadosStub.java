@@ -3,6 +3,7 @@ package com.ufes.lojapc.dao;
 import com.ufes.lojapc.presenter.LinhaTabelaComponente;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FonteDadosStub {
@@ -605,9 +606,9 @@ public class FonteDadosStub {
         return instance;
     }
 
-    public ArrayList<LinhaTabelaComponente> getTodosPorTipo(String tipo) {
+    public List<LinhaTabelaComponente> getTodosPorTipo(String tipo) {
 
-        ArrayList<LinhaTabelaComponente> componentesRecuperados = componentes.get(tipo);
+        List<LinhaTabelaComponente> componentesRecuperados = componentes.get(tipo);
 
         if (componentesRecuperados != null) {
             return componentesRecuperados;

@@ -2,6 +2,8 @@ package com.ufes.lojapc.model;
 
 public class Parte extends Componente {
 
+    private final static String FALHA = "Nao disponivel na parte";
+
     public Parte(double preco, String descricao) {
         super(preco, descricao);
 
@@ -29,21 +31,21 @@ public class Parte extends Componente {
 
     @Override
     public void restaura(TodoMemento memento) {
-        throw new UnsupportedOperationException("Nao disponivel na parte"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException(FALHA);
     }
 
     @Override
     public TodoMemento cria() {
-        throw new UnsupportedOperationException("Nao disponivel na parte"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException(FALHA);
     }
 
     @Override
     public void add(Componente componente) {
-        throw new UnsupportedOperationException("Nao disponivel na parte"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException(FALHA);
     }
 
     @Override
     public void add(String inicioNome, Componente componente) {
-        throw new UnsupportedOperationException("Nao disponivel na parte"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException(FALHA);
     }
 }

@@ -1,15 +1,16 @@
 package com.ufes.lojapc.memento;
 
 import com.ufes.lojapc.model.TodoMemento;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Zelador {
 
-    private final Stack<TodoMemento> elementos;
+    private final Deque<TodoMemento> elementos;
     private static Zelador instancia;
 
     private Zelador() {
-        this.elementos = new Stack<>();
+        this.elementos = new ArrayDeque<>();
     }
 
     public static Zelador getInstancia() {
@@ -19,17 +20,16 @@ public class Zelador {
         return instancia;
     }
 
-    public void add(TodoMemento todo) throws Exception {
+    public void add(TodoMemento todo) throws IllegalArgumentException {
         this.elementos.push(todo);
 
     }
 
-    public TodoMemento get() throws Exception {
+    public TodoMemento get() throws IllegalArgumentException {
         if (!elementos.isEmpty()) {
             return elementos.pop();
         }
-        //return null;
-        throw new Exception("Não há estados salvos");
+        throw new IllegalArgumentException("Não há estados salvos");
     }
 
     public void limparHistorico() {

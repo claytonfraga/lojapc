@@ -13,8 +13,8 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -80,7 +80,6 @@ public class AssistentePresenter {
 
             for (int column = 0; column < view.getTblComponente().getColumnCount(); column++) {
                 Component comp = view.getTblComponente().prepareRenderer(view.getTblComponente().getCellRenderer(row, column), row, column);
-                //rowHeight = 40;
                 rowHeight = Math.max(rowHeight, comp.getPreferredSize().height);
             }
 
@@ -110,14 +109,14 @@ public class AssistentePresenter {
 
     }
 
-    public void carregaTableModel(ArrayList<LinhaTabelaComponente> linhas) {
+    public void carregaTableModel(List<LinhaTabelaComponente> linhas) {
         configuraTableModel();
 
         Iterator<LinhaTabelaComponente> it = linhas.iterator();
         while (it.hasNext()) {
             LinhaTabelaComponente p = it.next();
             String linha = p.toString();
-            String campos[] = linha.split("#");
+            String[] campos = linha.split("#");
             tm.addRow(new Object[]{campos[0], campos[1]});
         }
 
@@ -141,7 +140,7 @@ public class AssistentePresenter {
         view.repaint();
     }
 
-    public void setDAO(IComponenteDAO componenteDao) throws FileNotFoundException, IOException {
+    public void setDAO(IComponenteDAO componenteDao) throws IOException {
         this.daoComponentes = componenteDao;
         tm.setNumRows(0);
     }

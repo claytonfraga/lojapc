@@ -31,6 +31,7 @@ public final class SelecaoTodoPlacaMaeState extends AssistenteState {
 
         presenter.getView().setVisible(true);
         presenter.getView().getBtnAnterior().setVisible(false);
+        presenter.getView().getBtnProximo().setVisible(true);
     }
 
     @Override

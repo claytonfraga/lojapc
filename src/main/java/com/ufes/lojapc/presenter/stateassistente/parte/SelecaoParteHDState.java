@@ -1,4 +1,4 @@
-package com.ufes.lojapc.presenter.stateassistente.parte;
+ package com.ufes.lojapc.presenter.stateassistente.parte;
 
 import com.ufes.lojapc.presenter.stateassistente.todo.SelecaoTodoGabineteState;
 import com.ufes.lojapc.memento.Zelador;
@@ -21,6 +21,7 @@ public final class SelecaoParteHDState extends AssistenteState {
 
         presenter.preencheDescricao(todo);
         presenter.getView().getBtnAnterior().setVisible(true);
+        presenter.getView().getBtnProximo().setVisible(true);
     }
 
     @Override
