@@ -24,8 +24,4 @@ public abstract class Componente implements Serializable {
 
     public abstract double getPreco();
 
-    public abstract void setPreco(double preco);
-
-    public abstract void setDescricao(String descricao);
-
 }

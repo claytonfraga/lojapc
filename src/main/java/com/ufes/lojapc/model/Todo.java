@@ -70,16 +70,6 @@ public class Todo extends Componente {
     }
 
     @Override
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    @Override
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    @Override
     public void restaura(TodoMemento memento) {
         this.preco = memento.getPreco();
         this.descricao = memento.getDescricao();

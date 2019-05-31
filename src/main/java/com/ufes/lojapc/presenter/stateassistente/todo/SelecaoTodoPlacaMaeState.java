@@ -35,32 +35,30 @@ public final class SelecaoTodoPlacaMaeState extends AssistenteState {
     }
 
     @Override
-    public void proximo() throws Exception {
+    public void proximo() {
         this.todo = new Todo(selecionado.getPreco(), selecionado.getDescricao());
         Zelador.getInstancia().add(todo.cria());
         presenter.setEstado(new SelecaoParteProcessadorState(presenter, this.todo));
     }
 
     @Override
-    public void limparSelecao() throws Exception {
+    public void limparSelecao() {
         todo = null;
         super.limparSelecao();
     }
 
     @Override
-    protected void adicionaSelecionado(Componente selecionado) throws Exception {
+    protected void adicionaSelecionado(Componente selecionado) {
         if (selecionado != null) {
             if (todo != null) {
                 Todo novoTodo = new Todo(todo.getPreco(), todo.getDescricao());
                 novoTodo.add(new Parte(selecionado.getPreco(), selecionado.getDescricao()));
-                preencheDescricao(novoTodo);
-            } else {
-                this.preencheDescricao(null);
+                preencheDescricao();
             }
         }
     }
 
-    protected void preencheDescricao(Todo todo) {
+    protected void preencheDescricao() {
         if (selecionado != null) {
             presenter.getView().getTaDescricao().selectAll();
             presenter.getView().getTaDescricao().replaceSelection("");

@@ -20,16 +20,6 @@ public class Parte extends Componente {
     }
 
     @Override
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    @Override
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    @Override
     public void restaura(TodoMemento memento) {
         throw new UnsupportedOperationException(FALHA);
     }

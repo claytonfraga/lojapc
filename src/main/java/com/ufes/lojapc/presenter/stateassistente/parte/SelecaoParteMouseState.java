@@ -23,13 +23,13 @@ public final class SelecaoParteMouseState extends AssistenteState {
     }
 
     @Override
-    public void anterior() throws Exception {
+    public void anterior() {
         this.todo.restaura(Zelador.getInstancia().get());
         presenter.setEstado(new SelecaoParteMonitorState(presenter, todo));
     }
 
     @Override
-    public void proximo() throws Exception {
+    public void proximo() {
         if (selecionado != null) {
             Parte parte = new Parte(selecionado.getPreco(), selecionado.getDescricao());
             todo.add(parte);
@@ -39,7 +39,7 @@ public final class SelecaoParteMouseState extends AssistenteState {
     }
 
     @Override
-    protected void adicionaSelecionado(Componente selecionado) throws Exception {
+    protected void adicionaSelecionado(Componente selecionado) {
         if (selecionado != null) {
             Todo novoTodo = new Todo(todo.getPreco(), todo.getDescricao());
             novoTodo.add(new Parte(selecionado.getPreco(), selecionado.getDescricao()));

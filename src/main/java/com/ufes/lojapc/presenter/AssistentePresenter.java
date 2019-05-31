@@ -9,7 +9,6 @@ import com.ufes.lojapc.view.AssistenteView;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.List;
@@ -138,11 +137,11 @@ public class AssistentePresenter {
         return daoComponentes;
     }
 
-    private void proximo() throws Exception {
+    private void proximo() {
         estadoAtual.proximo();
     }
 
-    private void anterior() throws Exception {
+    private void anterior() {
         estadoAtual.anterior();
     }
 
@@ -154,7 +153,7 @@ public class AssistentePresenter {
         this.computador = computador;
     }
 
-    private void limparSelecao() throws Exception {
+    private void limparSelecao() {
         estadoAtual.limparSelecao();
     }
 

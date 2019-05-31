@@ -24,13 +24,13 @@ public final class SelecaoTodoGabineteState extends AssistenteState {
     }
 
     @Override
-    public void anterior() throws Exception {
+    public void anterior() {
         todo.restaura(Zelador.getInstancia().get());
         presenter.setEstado(new SelecaoParteHDState(presenter, todo));
     }
 
     @Override
-    public void proximo() throws Exception {
+    public void proximo() {
         if (selecionado != null) {
             Todo gabinete = new Todo(selecionado.getPreco(), selecionado.getDescricao());
             todo.add(gabinete);
@@ -40,7 +40,7 @@ public final class SelecaoTodoGabineteState extends AssistenteState {
     }
 
     @Override
-    protected void adicionaSelecionado(Componente selecionado) throws Exception {
+    protected void adicionaSelecionado(Componente selecionado) {
         if (selecionado != null) {
             Todo novoTodo = new Todo(todo.getPreco(), todo.getDescricao());
             novoTodo.add(new Todo(selecionado.getPreco(), selecionado.getDescricao()));

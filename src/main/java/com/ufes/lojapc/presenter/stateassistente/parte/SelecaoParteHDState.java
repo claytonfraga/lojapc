@@ -1,4 +1,4 @@
- package com.ufes.lojapc.presenter.stateassistente.parte;
+package com.ufes.lojapc.presenter.stateassistente.parte;
 
 import com.ufes.lojapc.presenter.stateassistente.todo.SelecaoTodoGabineteState;
 import com.ufes.lojapc.memento.Zelador;
@@ -24,7 +24,7 @@ public final class SelecaoParteHDState extends AssistenteState {
     }
 
     @Override
-    public void anterior() throws Exception {
+    public void anterior() {
         while (todo.getDescricao().toLowerCase().contains("ssd") || todo.getDescricao().toLowerCase().contains("hd")) {
             todo.restaura(Zelador.getInstancia().get());
         }
@@ -32,7 +32,7 @@ public final class SelecaoParteHDState extends AssistenteState {
     }
 
     @Override
-    public void proximo() throws Exception {
+    public void proximo() {
 
         if (selecionado != null) {
             Parte parte = new Parte(selecionado.getPreco(), selecionado.getDescricao());
@@ -52,7 +52,7 @@ public final class SelecaoParteHDState extends AssistenteState {
     }
 
     @Override
-    protected void adicionaSelecionado(Componente selecionado) throws Exception {
+    protected void adicionaSelecionado(Componente selecionado) {
         if (selecionado != null) {
             Todo novoTodo = new Todo(todo.getPreco(), todo.getDescricao());
             novoTodo.add(new Parte(selecionado.getPreco(), selecionado.getDescricao()));
